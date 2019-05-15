@@ -5,7 +5,7 @@ Random.seed!(10)
 # Input data.
 X = [0 0; 0 1; 1 0; 1 1]
 X_ = hcat(X, -ones(4, 1))  # Bias-attached input.
-y = [0 1 1 1]
+y = [0 1 1 0]
 
 # Define learning rate.
 LEARNING_RATE = 0.25
@@ -26,7 +26,7 @@ function update_weight(input, weights, targets)
     return weights
 end
 
-for i in 1:20
+for i in 1:50
     global X_, w, y
     w = update_weight(X_, w, y)
     @printf("[Iteration %2d] Prediction %s, weight %s\n", i, forward(X_, w), w)

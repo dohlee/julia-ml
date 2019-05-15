@@ -5,7 +5,7 @@ Random.seed!(10)
 # Input data.
 X = [0 0; 0 1; 1 0; 1 1]
 X_ = hcat(X, -ones(4, 1))  # Bias-attached input.
-y = [0 1 1 1]
+y = [0 0 0 1]
 
 # Define learning rate.
 LEARNING_RATE = 0.25
